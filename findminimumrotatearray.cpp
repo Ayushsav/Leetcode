@@ -2,28 +2,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int findMin(vector<int>& nums) {
-        int n=nums.size();
-        int low=0;
-        int high=n-1;
-        while(low<high)
-        {
-            int mid=low+(high-low)/2;
-            if(nums[mid]>nums[high])
-            {
-                low=mid+1;
-            }
-            else
-            {
-                high=mid;
-            }
-        }
-        return nums[low];
+
+int findMini(vector<int>& nums) {
+    //using sorting
+    sort(nums.begin(),nums.end());
+    return nums[0];
     }
+
 
 int main()  
 {  
-    vector<int> nums={3,4,5,1,2};
-    cout<<findMin(nums);
+    vector<int> nums={4,5,6,7,0,1,2};
+    cout<<findMini(nums);
     return 0;  
 }
